@@ -11,10 +11,6 @@ export default function UseSearch() {
   const [detailsModal, setDetailsModal] = useState(false);
 
   const handleChange = _.debounce((event, values) => {
-    // if (open && options.length === 0) {
-    //   setLoading(true);
-    // }
-    // setvalue;
     let options = [];
 
     var request = {};
