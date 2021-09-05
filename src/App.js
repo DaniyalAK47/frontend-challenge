@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Trending from "./Components/Trending/Trending";
+import SearchBar from "./Components/SearchBar/SearchBar";
+import { Container } from "@material-ui/core";
+import Header from "./Components/Header/Header";
 
 function App() {
+  const [openFav, setOpenFav] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header setOpenfav={setOpenFav} />
+      <Container maxWidth="md">
+        <SearchBar />
+        <Trending openFav={openFav} setOpenFav={setOpenFav} />
+      </Container>
+    </>
   );
 }
 
